@@ -21,6 +21,7 @@ class EmployeeFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'position' => fake()->jobTitle(),
             'hire_date' => fake()->date(),
+            'slug' => fake()->unique()->slug(),
         ];
     }
 }
