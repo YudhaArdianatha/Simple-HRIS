@@ -3,13 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Leave extends Model
 {
+    use SoftDeletes;
+
     protected $guarded = ['id'];
 
     public function employee()
     {
-        return $this->belongsTo(employee::class);
+        return $this->belongsTo(Employee::class);
     }
 }

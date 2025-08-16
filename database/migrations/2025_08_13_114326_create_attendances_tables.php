@@ -15,9 +15,8 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->foreignId('employee_id')->constrained('employees')->onDelete('cascade');
-            $table->date('date');
-            $table->time('check_in');
-            $table->time('check_out')->nullable();
+            $table->datetime('check_in');
+            $table->datetime('check_out')->nullable();
             $table->softDeletes();
         });
     }
