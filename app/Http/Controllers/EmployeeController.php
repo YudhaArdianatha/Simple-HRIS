@@ -31,6 +31,7 @@ class EmployeeController extends Controller
                 'name' => 'required|string|max:255',
                 'email' => 'required|email|unique:employees,email',
                 'position' => 'required|string|max:255',
+                'hire_date' => 'required|date',
             ]);
     
             

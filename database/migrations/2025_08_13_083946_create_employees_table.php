@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('position');
             $table->date('hire_date');
-            $table->string('slug')->unique();
+            $table->string('slug')->unique()->nullable();
             $table->softDeletes();
         });
     }

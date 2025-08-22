@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Attendance;
+use App\Models\Leave;
 
 class Employee extends Model
 {
@@ -12,13 +14,13 @@ class Employee extends Model
     
     protected $guarded = ['id'];
 
-    public function attendance()
+    public function attendances()
     {
-        return $this->hasMany(attendance::class);
+        return $this->hasMany(Attendance::class);
     }
 
-    public function leave()
+    public function leaves()
     {
-        return $this->hasMany(leave::class);
+        return $this->hasMany(Leave::class);
     }
 }
