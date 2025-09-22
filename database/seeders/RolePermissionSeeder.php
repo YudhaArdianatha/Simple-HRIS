@@ -14,7 +14,6 @@ class RolePermissionSeeder extends Seeder
      */
     public function run(): void
     {
-        // Clear existing permissions and roles to avoid conflicts
         Permission::where('guard_name', 'web')->delete();
         Role::where('guard_name', 'web')->delete();
         
@@ -47,27 +46,25 @@ class RolePermissionSeeder extends Seeder
         foreach($permissions as $permission){
             Permission::firstOrCreate([
                 'name' => $permission,
-                'guard_name' => 'sanctum'  // Explicit guard
+                'guard_name' => 'sanctum' 
             ]);
         }
 
-        // PENTING: Tambahkan guard_name untuk Role juga
         $admin = Role::firstOrCreate([
             'name' => 'admin',
-            'guard_name' => 'sanctum'  // Explicit guard
+            'guard_name' => 'sanctum' 
         ]);
         
         $manager = Role::firstOrCreate([
             'name' => 'manager', 
-            'guard_name' => 'sanctum'  // Explicit guard
+            'guard_name' => 'sanctum' 
         ]);
         
         $employee = Role::firstOrCreate([
             'name' => 'employee',
-            'guard_name' => 'sanctum'  // Explicit guard
+            'guard_name' => 'sanctum' 
         ]);
 
-        // Sekarang assign permissions (semuanya sudah sama-sama guard sanctum)
         $admin->givePermissionTo(Permission::all());
         
         $manager->givePermissionTo([
