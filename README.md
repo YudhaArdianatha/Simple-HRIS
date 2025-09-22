@@ -13,7 +13,7 @@ This project focuses on the backend side (API only) and was created as practice 
     -   Attendances
     -   Users
 -   **Authentication & Authorization**
-    -   Login & Register
+    -   Login
     -   Role & Permission Management
     -   Default roles: `HR`, `Manager`, and `Employee`
 
